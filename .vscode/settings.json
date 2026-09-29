@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
+}
