@@ -41,6 +41,9 @@ test.describe("Products", () => {
                 productName!.trim(),
             );
 
+            // Debug only: pause so the details page is visible in headed mode. Remove when done.
+            await page.waitForTimeout(2000);
+
             await page.goBack();
         }
     });
