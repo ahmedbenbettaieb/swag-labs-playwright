@@ -28,4 +28,20 @@ test.describe('Login', () => {
 
         await expect(loginPage.errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
     })
+
+    test('Login with empty  credentials', async ({page}) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.Login('', '');
+        await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username is required');
+    })
+    test('Login with Empty username', async ({page}) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.Login('', users.standard.password);
+        await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username is required');
+    })
+    test('Login with Empty password', async ({page}) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.Login(users.standard.username, '');
+        await expect(loginPage.errorMessage).toHaveText('Epic sadface: Password is required');
+    })
 })
